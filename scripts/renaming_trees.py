@@ -42,7 +42,8 @@ csv    = argv[2]
         it didn't work to revome it with 'encoding' argument in open() so
         I used '.strip()' to remove the BOM'''
 names = {} 
-with open("./examples/renaming_ptd_samples_fullnames.csv") as columns: 
+#with open("../examples/renaming_ptd_samples.csv") as columns: 
+with open(csv, "r") as columns:
     for line in columns:  
         line = line.strip('\ufeff').strip("\n").split(",")  
         names[line[0]] = line[1]                                 
@@ -53,8 +54,9 @@ with open("./examples/renaming_ptd_samples_fullnames.csv") as columns:
     - reading the original tree and using the dictionary to rename the tips as a list - lines
     - looping through the 'lines' list to save the renamed tree as a new file'''
 lines = [] 
-with open("./examples/concat.tre", "rt") as infile: 
-    with open("./examples/concat.renamed.tre", "wt") as retree: 
+#with open("../examples/concat.tre", "rt") as infile: 
+with open(tree, "rt") as infile:
+    with open("../examples/concat.renamed.tre", "wt") as retree: 
         for line in infile:             
             for key,value in names.items(): 
                 if key in line: 
@@ -65,6 +67,6 @@ with open("./examples/concat.tre", "rt") as infile:
 
 #printing some information about what was done and where the output is
 print()
-print(f"Tips of {tree} were renamed and the new tree was saved at './examples/concat.renamed.tre'")
+print(f"Tips of {tree} were renamed and the new tree was saved at '../examples/concat.renamed.tre'")
 print()
 print("Done!")

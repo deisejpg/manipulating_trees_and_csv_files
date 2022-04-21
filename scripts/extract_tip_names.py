@@ -15,10 +15,10 @@ import os
 import re
 
 #starting a file to write the tip names of our phylogenetic tree
-treenames = open("./examples/names_on_the_tree.csv", "w")
+treenames = open("../examples/names_on_the_tree.csv", "w")
 
 matched = []
-treefile = "./examples/concat.tre"
+treefile = "../examples/concat.tre"
 with open(treefile, "r") as tree:
     #looping over the tree and saving tip names to 'matched' list
     for line in tree:
@@ -43,4 +43,4 @@ for i in matched:
 
 new_line = "\n"
 print(f"{new_line}There are {len(matched)} tips in the provided tree.")
-print(f"Sample codes were saved in './examples/names_on_the_tree.csv.'{new_line}")
+print(f"Sample codes were saved in '../examples/names_on_the_tree.csv.'{new_line}")
