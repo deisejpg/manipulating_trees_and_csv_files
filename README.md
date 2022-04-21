@@ -4,7 +4,7 @@ This repo contains four scripts and examples for each script:
 
 `I. extract_tip_names.py`
 
-&nbsp;This script parses names of a phylogenetic tree using a regular expression. It outputs a single-column file with all the names that were parsed from the tree. The tree must be in newick format. The regular expression may need to be customized for different name formatting.  
+This script parses names of a phylogenetic tree using a regular expression. It outputs a single-column file with all the names that were parsed from the tree. The tree must be in newick format. The regular expression may need to be customized for different name formatting.  
 
 Usage:  
 ```
